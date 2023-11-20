@@ -16,7 +16,7 @@ then
     cp -r student-submission grading-area
     cp TestListExamples.java grading-area/student-submission
     javac -cp $CPATH grading-area/student-submission/*.java
-    java -cp $CPATH2 grading-area/student-submission/TestListExamples
+    java -cp $CPATH2 grading-area/student-submission/TestListExamples.class
 else
     echo "ListExamples.java file not found"
     exit
