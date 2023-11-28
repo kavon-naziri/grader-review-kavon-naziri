@@ -15,8 +15,13 @@ then
     echo "File found"
     cp -r student-submission grading-area
     cp TestListExamples.java grading-area/student-submission
+    cp -r lib grading-area/student-submission
     javac -cp $CPATH grading-area/student-submission/*.java
-    java -cp $CPATH2 grading-area/student-submission/TestListExamples.class
+    cd grading-area/student-submission
+    java -cp $CPATH2 org.junit.runner.JUnitCore TestListExamples
+
+    java -cp $CPATH2 org.junit.runner.JUnitCore TestListExamples > grading_output.txt
+
 else
     echo "ListExamples.java file not found"
     exit
