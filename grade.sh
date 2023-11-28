@@ -22,6 +22,15 @@ then
 
     java -cp $CPATH2 org.junit.runner.JUnitCore TestListExamples > grading_output.txt
 
+    #grep -c "OK" grading_output.txt
+
+    if [[ `grep -c "OK" grading_output.txt` > 0 ]]
+    then
+        echo "pass"
+    else
+        echo "fail"
+    fi
+
 else
     echo "ListExamples.java file not found"
     exit
